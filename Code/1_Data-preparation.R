@@ -41,7 +41,7 @@ invert_dframe[is.na(invert_dframe)] <- 0
 #### Stream characteristics data ####
 
 # Read in the site data file
-site_dframe <- read.csv("Data/Environmental/Site_variables.csv")
+site_dframe <- read.csv("Data/Environment/Site_variables.csv")
 
 
 #### Climatological and meteorological data ####
@@ -54,7 +54,7 @@ site_dframe <- read.csv("Data/Environmental/Site_variables.csv")
 options(warn = -1)
 
 # Read in PDO data from NOAA
-pdo_data <- read.csv("Data/Environmental/pdo.timeseries.ersstv5.csv")
+pdo_data <- read.csv("Data/Environment/pdo.timeseries.ersstv5.csv")
 
 # Clean up the dataset for use in this study
 pdo_data$date_clean <- dmy(pdo_data$Date) # create a date formatted column
@@ -75,7 +75,7 @@ pdo_var <- aggregate(PDO ~ year, data = pdo_data_clean, FUN = sd) # sd
 options(warn = getOption("warn"))
 
 # Read in meteorological data from NOAA
-met_data <- read.csv("Data/Environmental/NOAA_data.csv")
+met_data <- read.csv("Data/Environment/NOAA_data.csv")
 
 # Clean up the dataset
 met_data_clean <- select(met_data, DATE, EVAP, SNOW, SNWD, TMAX, TMIN, TOBS,
